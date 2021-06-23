@@ -1,13 +1,15 @@
+import { SET_DATA } from '../actions/types';
+
 const initialState = {
-  fullScreenLoading: false,
+  data: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_FULL_SCREEN_LOADER':
+    case SET_DATA:
       return {
         ...state,
-        fullScreenLoading: action.payload,
+        data: action.payload,
       };
     default:
       return state;

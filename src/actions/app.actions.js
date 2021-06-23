@@ -1,6 +1,7 @@
 import {fetchApi} from '../services/api';
+import {SET_DATA} from './types';
 
-export const userLoginAction = payload => dispatch =>
+export const getDataAction = payload => dispatch =>
   fetchApi(
     '/api/authenticate',
     'POST',
@@ -11,7 +12,7 @@ export const userLoginAction = payload => dispatch =>
   )
     .then(data => {
       dispatch({
-        type: 'USER_LOGGEDIN',
+        type: SET_DATA,
         payload: data,
       });
       return data;
