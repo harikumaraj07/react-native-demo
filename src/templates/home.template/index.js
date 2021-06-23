@@ -1,26 +1,34 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Header from '../../components/Header';
+import Item from '../../components/Item';
+import ContactInput from './contactForm';
 import styles from './styles';
 
 const propTypes = {
-  onPressLeftIcon: PropTypes.func,
+  contacts: PropTypes.array,
 };
 
 const defaultProps = {
-  onPressLeftIcon: () => {},
+  contacts: [],
 };
 
 const HomeTemplate = props => {
-  const {onPressLeftIcon} = props;
+  const { contacts } = props;
 
   return (
     <View style={styles.wrapper}>
-      <Header title="Home" onPressLeftIcon={onPressLeftIcon} />
+      <Header title="Contacts" leftIcon={null} {...props} />
       <View style={styles.container}>
-        <Text>Home</Text>
+        <FlatList
+          ListHeaderComponent={<ContactInput {...props} />}
+          contentContainerStyle={styles.content}
+          keyExtractor={key => key.phone}
+          data={contacts}
+          renderItem={data => <Item {...data} {...props} />}
+        />
       </View>
     </View>
   );

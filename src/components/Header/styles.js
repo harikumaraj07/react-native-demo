@@ -64,6 +64,11 @@ const styles = {
   transparentBackground: {
     backgroundColor: 'reba(0, 0, 0, 0)',
   },
+  pickerContainer: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    borderRadius: 5,
+  },
 };
 
 export default styles;

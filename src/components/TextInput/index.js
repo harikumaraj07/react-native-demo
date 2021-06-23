@@ -25,7 +25,7 @@ const Input = props => {
     disabled,
     keyboardType,
     field: {value, name},
-    form: {handleChange, errors},
+    form: {handleChange, errors, submitCount},
   } = props;
 
   return (
@@ -37,12 +37,12 @@ const Input = props => {
           accessibilityLabel={id}
           style={styles.inputTextBoxStyle}
           onChangeText={handleChange(name)}
-          value={value}
+          value={`${value}`}
           editable={!disabled}
           keyboardType={keyboardType}
         />
       </View>
-      {!!errors[name] && <Text style={styles.error}>{errors[name]}</Text>}
+      {!!errors[name] && submitCount > 0 && <Text style={styles.error}>{errors[name]}</Text>}
     </View>
   );
 };

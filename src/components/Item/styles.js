@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
-import {widthPercent} from '../../utility/display.utils';
+import {widthPercent} from '../../utils/display.utils';
 
 export default StyleSheet.create({
     container: {
-        marginHorizontal: 15,
+        marginHorizontal: 5,
         paddingVertical: 19,
-        alignItems: 'center',
+        justifyContent: 'center',
         borderBottomWidth: 0.5,
         borderBottomColor: '#2E384D',
     },
@@ -36,5 +36,33 @@ export default StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         color: '#2E384D',
+    },
+    alignItemsCenter: {
+        alignItems: 'center',
+    },
+    nameText: {
+        color: '#888888',
+    },
+    phoneText: {
+        color: '#2E384D',
+        fontWeight: 'bold'
+    },
+    companyNameText: {
+        fontSize: 14,
+        color: '#444444',
+    },
+    iconContainer: {
+        padding: 10,
+        borderRadius: 50,
+        backgroundColor: '#2784d6',
+    },
+    actionsCotnainer: {
+        marginLeft: 10,
+    },
+    horizontalDivider: {
+        width: 10,
+    },
+    bgRed: {
+        backgroundColor: '#c9303b',
     }
 })

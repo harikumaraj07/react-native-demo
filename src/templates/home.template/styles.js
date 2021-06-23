@@ -6,18 +6,23 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    paddingTop: 20,
-    paddingHorizontal: 15,
     backgroundColor: '#FFFFFF',
   },
   content: {
-    marginTop: 70,
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  col: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    paddingHorizontal: 20,
-    paddingTop: 30,
+  },
+  horizonalDivider: {
+    width: 10,
+  },
+  fieldContainer: {
+    marginBottom: 10,
   },
 });
 

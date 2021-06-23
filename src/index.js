@@ -6,22 +6,20 @@ import Routes from './configs/routes.config';
 import Loader from './components/FullScreenLoader';
 
 const propTypes = {
-  isLoggedIn: PropTypes.bool,
   fullScreenLoading: PropTypes.bool,
 };
 
 const defaultProps = {
-  isLoggedIn: false,
   fullScreenLoading: false,
 };
 
 const App = props => {
-  const {isLoggedIn, fullScreenLoading} = props;
+  const {fullScreenLoading} = props;
 
   return (
     <>
       <Loader loading={fullScreenLoading} />
-      <Routes isLoggedIn={isLoggedIn} />
+      <Routes />
     </>
   );
 };
@@ -31,7 +29,6 @@ App.propTypes = propTypes;
 App.defaultProps = defaultProps;
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.auth.isLoggedIn,
   fullScreenLoading: state.app.fullScreenLoading,
 });
 
